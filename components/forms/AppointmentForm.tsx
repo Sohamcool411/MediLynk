@@ -101,7 +101,7 @@ export const AppointmentForm = ({
             cancellationReason: values.cancellationReason,
           },
           type,
-          timeZone: new Date().getTimezoneOffset(),
+          timeZone: "UTC+05:30",
         };
 
         const updatedAppointment = await updateAppointment(appointmentToUpdate);
