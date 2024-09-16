@@ -14,20 +14,28 @@ const RequestSuccess = async ({
   const appointment = await getAppointment(appointmentId);
 
   const doctor = Doctors.find(
-    (doctor) => doctor.name === appointment.primaryPhysician
+    (doctor) => doctor.name === appointment.primaryPhysician,
   );
 
   return (
     <div className=" flex h-screen max-h-screen px-[5%]">
       <div className="success-img">
-        <Link href="/">
+      <Link href="/" className="cursor-pointer flex gap-1 justify-center align-center">
+        <Image
+            src="/assets/icons/logo-icon.svg"
+            height={32}
+            width={162}
+            alt="logo"
+            className="h-8 w-fit"
+          />
           <Image
             src="/assets/icons/logo-full.svg"
-            height={1000}
-            width={1000}
+            height={32}
+            width={162}
             alt="logo"
-            className="h-10 w-fit"
+            className="h-8 w-fit"
           />
+          
         </Link>
 
         <section className="flex flex-col items-center">
@@ -73,7 +81,7 @@ const RequestSuccess = async ({
           </Link>
         </Button>
 
-        <p className="copyright">© 2024 CarePluse</p>
+        <p className="copyright">© 2024 MediLynk</p>
       </div>
     </div>
   );

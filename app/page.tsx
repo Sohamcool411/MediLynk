@@ -12,7 +12,15 @@ const Home = ({ searchParams }: SearchParamProps) => {
       {isAdmin && <PasskeyModal />}
 
       <section className="remove-scrollbar container my-auto">
-        <div className="sub-container max-w-[496px]">
+        <div className="sub-container max-w-[496px] flex">
+        <div className="flex">
+        <Image
+            src="/assets/icons/logo-icon.svg"
+            height={32}
+            width={162}
+            alt="logo"
+            className="h-8 w-fit"
+          />
           <Image
             src="/assets/icons/logo-full.svg"
             height={1000}
@@ -20,12 +28,12 @@ const Home = ({ searchParams }: SearchParamProps) => {
             alt="patient"
             className="mb-12 h-10 w-fit"
           />
-
+          </div>
           <PatientForm />
 
           <div className="text-14-regular mt-20 flex justify-between">
             <p className="justify-items-end text-dark-600 xl:text-left">
-              © 2024 CarePluse
+              © 2024 MediLynk
             </p>
             <Link href="/?admin=true" className="text-green-500">
               Admin
