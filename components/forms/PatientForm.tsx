@@ -17,6 +17,7 @@ import SubmitButton from "../SubmitButton";
 export const PatientForm = () => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
+  const [newuser, setNewuser] = useState(false);
 
   const form = useForm<z.infer<typeof UserFormValidation>>({
     resolver: zodResolver(UserFormValidation),
@@ -40,7 +41,11 @@ export const PatientForm = () => {
       const newUser = await createUser(user);
 
       if (newUser) {
+        setNewuser(true);
         router.push(`/patients/${newUser.$id}/register`);
+      }
+      else{
+        alert("email and phone number do not match.");
       }
     } catch (error) {
       console.log(error);
@@ -84,7 +89,6 @@ export const PatientForm = () => {
           label="Phone number"
           placeholder="(+91) 1234567890"
         />
-
         <SubmitButton isLoading={isLoading}>Get Started</SubmitButton>
       </form>
     </Form>

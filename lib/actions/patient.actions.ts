@@ -32,6 +32,7 @@ export const createUser = async (user: CreateUserParams) => {
     if (error && error?.code === 409) {
       const existingUser = await users.list([
         Query.equal("email", [user.email]),
+        Query.equal("phone", [user.phone]),
       ]);
 
       return existingUser.users[0];
