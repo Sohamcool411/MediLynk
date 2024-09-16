@@ -12,7 +12,7 @@ const AdminPage = async () => {
   return (
     <div className="mx-auto flex max-w-7xl flex-col space-y-14">
       <header className="admin-header">
-        <Link href="/" className="cursor-pointer flex gap-1 align-center">
+        <Link href="/" className="cursor-pointer flex gap-1">
         <Image
             src="/assets/icons/logo-icon.svg"
             height={32}

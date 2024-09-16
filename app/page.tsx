@@ -13,7 +13,8 @@ const Home = ({ searchParams }: SearchParamProps) => {
 
       <section className="remove-scrollbar container my-auto">
         <div className="sub-container max-w-[496px] flex">
-        <div className="flex">
+        <Link href="/">
+        <div className="flex cursor-pointer">
         <Image
             src="/assets/icons/logo-icon.svg"
             height={32}
@@ -29,6 +30,7 @@ const Home = ({ searchParams }: SearchParamProps) => {
             className="mb-12 h-10 w-fit"
           />
           </div>
+          </Link>
           <PatientForm />
 
           <div className="text-14-regular mt-20 flex justify-between">

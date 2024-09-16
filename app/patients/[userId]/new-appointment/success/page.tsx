@@ -20,7 +20,8 @@ const RequestSuccess = async ({
   return (
     <div className=" flex h-screen max-h-screen px-[5%]">
       <div className="success-img">
-      <Link href="/" className="cursor-pointer flex gap-1 justify-center align-center">
+      <Link href="/">
+        <div className="flex cursor-pointer">
         <Image
             src="/assets/icons/logo-icon.svg"
             height={32}
@@ -30,13 +31,13 @@ const RequestSuccess = async ({
           />
           <Image
             src="/assets/icons/logo-full.svg"
-            height={32}
-            width={162}
-            alt="logo"
-            className="h-8 w-fit"
+            height={1000}
+            width={1000}
+            alt="patient"
+            className="mb-12 h-10 w-fit"
           />
-          
-        </Link>
+          </div>
+          </Link>
 
         <section className="flex flex-col items-center">
           <Image
