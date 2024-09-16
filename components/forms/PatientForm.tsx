@@ -17,7 +17,6 @@ import SubmitButton from "../SubmitButton";
 export const PatientForm = () => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
-  const [newuser, setNewuser] = useState(false);
 
   const form = useForm<z.infer<typeof UserFormValidation>>({
     resolver: zodResolver(UserFormValidation),
@@ -41,7 +40,6 @@ export const PatientForm = () => {
       const newUser = await createUser(user);
 
       if (newUser) {
-        setNewuser(true);
         router.push(`/patients/${newUser.$id}/register`);
       }
       else{
