@@ -1,6 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
-
 import { redirect } from "next/navigation";
 import RegisterForm from "@/components/forms/RegisterForm";
 import { getPatient, getUser } from "@/lib/actions/patient.actions";
@@ -15,7 +13,7 @@ const Register = async ({ params: { userId } }: SearchParamProps) => {
     <div className="flex h-screen max-h-screen">
       <section className="remove-scrollbar container">
         <div className="sub-container max-w-[860px] flex-1 flex-col py-10">
-        <Link href="/" className="cursor-pointer flex gap-1 justify-center align-center">
+        <div className="flex">
         <Image
             src="/assets/icons/logo-icon.svg"
             height={32}
@@ -25,13 +23,12 @@ const Register = async ({ params: { userId } }: SearchParamProps) => {
           />
           <Image
             src="/assets/icons/logo-full.svg"
-            height={32}
-            width={162}
-            alt="logo"
-            className="h-8 w-fit"
+            height={1000}
+            width={1000}
+            alt="patient"
+            className="mb-12 h-10 w-fit"
           />
-          
-        </Link>
+          </div>
           <RegisterForm user={user} />
 
           <p className="copyright py-12">© 2024 MediLynk</p>
